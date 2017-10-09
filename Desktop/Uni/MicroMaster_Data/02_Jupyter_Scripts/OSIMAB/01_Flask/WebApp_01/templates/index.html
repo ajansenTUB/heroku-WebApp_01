@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Brückendaten</title>
+  </head>
+
+  <body>
+    <div style="margin-left: 40px">
+    <h3>Auswahl des Bauwerks</h3>
+<!--       <h2>Option selector</h2>
+        <h3><table><form action="" method="POST">
+          <td>
+          <label>Select :</label>
+            <select name="option" width="300px">
+		{% for x in server_list %}
+		<option value="{{ x }}"{% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+		{% endfor %}
+            </select>
+          </td>
+
+        </form></table></h3> -->
+        <form method="POST">
+            {{ form.csrf_token }}
+            {{ form.selFieldBW.label }}: {{ form.selFieldBW() }} {{ form.selFieldType.label }}: {{ form.selFieldType() }} {{ form.selFieldD.label }}: {{ form.selFieldD() }}
+            <input type="submit" value="Go"/>
+        </form>
+        </div>
+        <div style="height: 80%; border: 10px;">
+        {% include fileNameMap %}
+      </div>
+	
+
+
+  </body>
+</html>
